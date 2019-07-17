@@ -64,10 +64,71 @@ db.collection("ToDo").onSnapshot((querySnapshot) => {//get()
         <a class="waves-effect waves-light btn-small" onclick="deletes('${doc.id}')";'>Eliminar</a>
         </td>
         <td>
-        <a class="waves-effect waves-light btn-small">Modificar</a>
+        <a class="waves-effect waves-light btn-small" onclick="updates('${doc.id}','${doc.data().titulo}','${doc.data().area}','${doc.data().responsable_id}','${doc.data().proyecto_id}','${doc.data().descripcion}','${doc.data().fecha}')";'>Modificar</a>
         </td>
     </tr>
         `
 
     });
 });
+
+
+
+function updates(id,titulo,area,responsable,proyecto,des,fecha){
+
+
+    document.getElementById('titulo').onfocus;
+    document.getElementById('area').onfocus
+    document.getElementById('responsable').onfocus;
+    document.getElementById('Proyecto').onfocus;
+    document.getElementById('Descripcion').onfocus;
+    document.getElementById('fecLimite').onfocus;
+
+    document.getElementById('titulo').value=titulo;
+    document.getElementById('area').value=area;
+    document.getElementById('responsable').value=responsable;
+    document.getElementById('Proyecto').value=proyecto;
+    document.getElementById('Descripcion').value=des;
+    document.getElementById('fecLimite').value=fecha;
+
+    var btn=document.getElementById('bot');
+    btn.innerHTML='Editar';
+
+
+
+
+
+
+    
+    btn.onclick=function(){
+
+
+        var titulo=     document.getElementById('titulo').value;
+        var area=       document.getElementById('area').value;
+        var responsable=document.getElementById('responsable').value;
+        var proyecto=   document.getElementById('Proyecto').value;
+        var descripcion=document.getElementById('Descripcion').value;
+        var fecha=      document.getElementById('fecLimite').value;
+
+        
+
+        db.collection("ToDo").doc(id).set({
+            titulo: titulo,
+            area: area,
+            responsable_id: responsable,
+            proyecto_id: proyecto,
+            descripcion: descripcion,
+            fecha: fecha,
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+
+    }
+    // Add a new document in collection "cities"
+
+
+}
