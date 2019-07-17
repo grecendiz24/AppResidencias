@@ -36,6 +36,17 @@ function add(){
 }
 
 
+
+function deletes(id){
+    db.collection("ToDo").doc(id).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+    
+}
+
+
 var tabla=document.getElementById('tabla');
 
 db.collection("ToDo").onSnapshot((querySnapshot) => {//get()
@@ -50,14 +61,10 @@ db.collection("ToDo").onSnapshot((querySnapshot) => {//get()
         <td>${doc.data().proyecto_id}</td>
         <td>${doc.data().fecha}</td>
         <td>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-         <i class="material-icons right">send</i>
-         </button>
+        <a class="waves-effect waves-light btn-small" onclick="deletes('${doc.id}')";'>Eliminar</a>
         </td>
         <td>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-             <i class="material-icons right">send</i>
-            </button>
+        <a class="waves-effect waves-light btn-small">Modificar</a>
         </td>
     </tr>
         `
