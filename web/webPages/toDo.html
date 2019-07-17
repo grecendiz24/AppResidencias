@@ -2,6 +2,7 @@
 <html>
 
 <head>
+        <meta charset="UTF-8">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -136,7 +137,7 @@
                             <label for="fecLimite">Fecha Limite</label>
                         </div>
                         <div class="input-field col s12 m6">
-                            <button class="btn waves-effect waves-light" onclick="add()" type="button" name="action">
+                            <button class="btn waves-effect waves-light" onclick="add()" id="bot" type="button" name="action">
                                 Agregar
                                 <i class="material-icons right">send</i>
                             </button>
@@ -214,11 +215,7 @@
             var instances = M.Datepicker.init(elems, options);
         });
 
-        // Or with jQuery
-
-        $(document).ready(function () {
-            $('.datepicker').datepicker();
-        });
+       
     </script>
 </body>
 
