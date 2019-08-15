@@ -128,7 +128,27 @@ function updates(id,titulo,area,responsable,proyecto,des,fecha){
         });
 
     }
+
+
+}
+
     // Add a new document in collection "cities"
+function addEmpleado(){
+    
+    var nombre=     document.getElementById('nombre').value;
+    var apellidos=       document.getElementById('apellidos').value;
+    var area=document.getElementById('area').value;
+    db.collection("Empleados").add({
 
+        nombre: nombre,
+        apellidos: apellidos,
+        area: area,
 
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
 }
