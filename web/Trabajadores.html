@@ -6,7 +6,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../lib/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css" media="screen,projection" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
@@ -23,57 +23,41 @@
                     <i class="material-icons">menu</i>
                 </a>
                 <ul class="left hide-on-med-and-down">
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="principal.html">Inicio</a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="id_drop1">
                             Planeacion
-                            <i class="material-icons right">arrow_drop_down</i>
+                            <i class="material-icons right" >arrow_drop_down</i>
 
-                        </a>
+                        </a> 
 
                         <ul id="id_drop1" class="dropdown-content">
 
-                            <li><a href="#">Graficas</a></li>
+                            <li><a href="Grafica.html">Graficas </a></li>
                             <li class="divider"><a href="#">Item</a></li>
-                            <li><a href="#">Tareas</a></li>
-                            <li><a href="#">Actividad</a></li>
-                            <li><a href="#">Progreso</a></li>
+                            <li><a href="toDo.html">Tareas</a></li>
+                            <li><a href="actividad.html">Actividad</a></li>
+                            <li><a href="progreso.html">Progreso</a></li>
                         </ul>
                     </li>
 
 
-                    <li><a href="#">Chat</a></li>
-                    <li><a href="#">Soporte</a></li>
-
-                    <li><a href="#">Salir</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="Trabajadores.html">Soporte</a></li> 
+                    <li><a href="index.html">Salir</a></li>
 
                 </ul>
             </div>
-        </nav>
+        </nav>  
     </div>
 
     <ul class="sidenav" id="menu-res">
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#">Item</a></li>
-        <li><a href="#" class="dropdown-trigger" data-target="id_drop">
-                Dropdown
-                <i class="material-icons right">arrow_drop_down</i>
-
-            </a>
-            <ul id="id_drop" class="dropdown-content">
-
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li class="divider"><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-
-            </ul>
+        <li><a href="Grafica.html">Graficas </a></li>
+         <li><a href="actividad.html">Actividad</a></li>
+        <li><a href="progreso.html">Progreso</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="Trabajadores.html">Soporte</a></li> 
+                    <li><a href="index.html">Salir</a></li>
+        
     </ul>
 
 
@@ -167,7 +151,7 @@
             M.AutoInit();
         });
     </script>
-    <script src="../lib/js/app.js"></script>
+    <script src="lib/js/app.js"></script>
 </body>
 
 </html>

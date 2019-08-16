@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
+    
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="blue darken-3">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo right ">
+                    TACTS MX
+                </a>
+                <a href="#" data-target="menu-res" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="principal.html">Inicio</a></li>
+                    <li><a href="#" class="dropdown-trigger" data-target="id_drop1">
+                            Planeacion
+                            <i class="material-icons right" >arrow_drop_down</i>
+
+                        </a> 
+
+                        <ul id="id_drop1" class="dropdown-content">
+
+                            <li><a href="Grafica.html">Graficas </a></li>
+                            <li class="divider"><a href="#">Item</a></li>
+                            <li><a href="toDo.html">Tareas</a></li>
+                            <li><a href="actividad.html">Actividad</a></li>
+                            <li><a href="progreso.html">Progreso</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="Trabajadores.html">Soporte</a></li> 
+                    <li><a href="index.html">Salir</a></li>
+
+                </ul>
+            </div>
+        </nav>  
+    </div>
+
+    <ul class="sidenav" id="menu-res">
+        <li><a href="Grafica.html">Graficas </a></li>
+         <li><a href="actividad.html">Actividad</a></li>
+        <li><a href="progreso.html">Progreso</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="Trabajadores.html">Soporte</a></li> 
+                    <li><a href="index.html">Salir</a></li>
+        
+    </ul>
+
+    <div class="row">
+        <section class="container">
+
+            <h5 class="card-panel lime lighten-1  center-align">
+                <i class="material-icons prefix">spellcheck</i>
+                Soporte
+            </h5>
+
+            <div class="z-depth-2">
+                <div class="row">
+                    <form>
+                        <div class="input-field col s12 m6">
+                            <i class="material-icons prefix">assignment</i>
+                            <input id="titulo" type="text" class="validate">
+                            <label for="titulo">Titulo</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <i class="material-icons prefix">device_hub</i>
+                            <input id="area" type="tel" class="validate">
+                            <label for="area">Area</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select class="icons" id="responsable">
+                                <option value="0" disabled selected>Selecciona</option>
+                                <option value="Programador"
+                                    data-icon="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Yo_como_profe.png/250px-Yo_como_profe.png"
+                                    class="left">Programador 1</option>
+                                <option value="Diseñador" data-icon="images/office.jpg" class="left">Diseñador 2</option>
+                                <option value="Tester" data-icon="images/yuna.jpg" class="left">Tester 3</option>
+                            </select>
+                            <label>Asignar a:</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <select class="icons" id="Proyecto">
+                                <option value="0" disabled selected>Selecciona</option>
+                                <option value="Protectio"
+                                    data-icon="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Yo_como_profe.png/250px-Yo_como_profe.png"
+                                    class="left">Protectio</option>
+                                <option value="LWS" data-icon="images/office.jpg" class="left">LWS</option>
+                                <option value="HILTI" data-icon="images/yuna.jpg" class="left">HILTI</option>
+                            </select>
+                            <label>Proyecto</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <textarea id="Descripcion" class="materialize-textarea"></textarea>
+                                <label for="Descripcion">Descripcion</label>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="input-field col s12 m6">
+                            <i class="material-icons prefix">event</i>
+                            <input type="text" class="datepicker" id="fecLimite">
+                            <label for="fecLimite">Fecha Limite</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <button class="btn waves-effect waves-light" onclick="add()" id="bot" type="button" name="action">
+                                Agregar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <table >
+                                <thead>
+                                    <tr>
+                                        <th>Titulo</th>
+                                        <th>Area</th>
+                                        <th>Responsable</th>
+                                        <th>Proyecto</th>
+                                        <th>Fecha Limite</th>
+                                        <th>Eliminar</th>
+                                        <th>Editar</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody id="tabla"> 
+                            
+                                    
+                                </tbody>
+                            </table>
+
+
+
+
+
+
+
+                    </form>
+                </div>
+
+        </section>
+      
+
+
+
+
+
+
+
+
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../lib/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+        });
+    </script>
+    <script src="lib/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, options);
+        });
+
+       
+    </script>
+</body>
+
+</html>
