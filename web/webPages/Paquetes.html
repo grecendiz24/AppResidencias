@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../lib/css/materialize.min.css" media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase-firestore.js"></script>
+</head>
+
+    <body>  
+ <div class="card-panel #0288d1 light-blue darken-2">
+
+<div class="row"> <section class="container"> </section></div>
+<div class="row"> <section class="container"> </section><h2 class=" white-text center-align"></h2> </div>
+
+
+</div>
+ 	<div class="row"> <section class="container"> </section></div>
+ 	<div class="row"> <section class="container"> </section></div>
+
+    <div class="row "> 
+    	<section class="container"> 
+   
+
+    <div class="col s5 m5">
+      <div class="card">
+        <div class="card-image">
+          <img src="../lib/images/.jpg">
+          <span class="card-title"></span>
+           <a class="btn-floating halfway-fab waves-effect waves-light red btn-large modal-trigger" href="#modalMensual">
+          	<i class="material-icons">add</i>
+          </a>
+        </div>
+        <div class="card-content">
+          <h5 class="center-align" >Suscripción <br> Mensual</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s5 m5">
+      <div class="card">
+        <div class="card-image">
+          <img  src="../lib/images/.jpg">
+          <span class="card-title"></span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red btn-large modal-trigger" href="#modalAnual">
+          	<i class="material-icons">add</i>
+          </a>
+           
+
+        </div>
+        <div class="card-content">
+          <h5 class="center-align">Suscripción <br>Anual</h5>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</div>
+
+
+  <div id="modalAnual" class="modal">
+    <div class="modal-content">
+      <h4>Suscripción Anual</h4>
+      <h4>$5,000.00</h4>
+
+ 
+      	<br>
+      	<h5>Todo incluido </h5>
+      	     <p>Ahorra un 20% </p>
+
+      Agenda Digital<br>
+Expediente Clínico <br>
+Punto de Venta <br>
+Ordenes de Compra <br>
+Control de Inventarios<br>
+Alertas vía Correo Electrónico<br>
+Alertas vía SMS<br>
+Reportes<br>
+
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+       <a href="../webPages/Compra2.html#!" class="btn waves-effect waves-light #ffab91 deep-orange lighten-3">Comprar</a>
+    </div>
+  </div>
+
+  <div id="modalMensual" class="modal">
+    <div class="modal-content">
+      <h4>Suscripción Mensual</h4>
+      <h4>$500.00</h4>
+
+ 
+      	<br>
+      	<h5>Todo incluido </h5>
+      	     <p>Ahorra un 20% </p>
+
+      Agenda Digital<br>
+Expediente Clínico <br>
+Punto de Venta <br>
+Ordenes de Compra <br>
+Control de Inventarios<br>
+Alertas vía Correo Electrónico<br>
+Alertas vía SMS<br>
+Reportes<br>
+
+    </div>
+    <div class="modal-footer">  
+    	<a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+        <button class="btn waves-effect waves-light #ffab91 deep-orange lighten-3" type="submit" name="action">Comprar
+
+  </button>
+    </div>
+  </div>
+
+     <script type="text/javascript" src="../lib/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+        });
+    </script>
+    <script src="../lib/js/ConexionPayPal.js"></script>
+    </body>
+</html>
